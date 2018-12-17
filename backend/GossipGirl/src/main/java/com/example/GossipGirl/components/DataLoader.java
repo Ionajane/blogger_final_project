@@ -44,10 +44,10 @@ public class DataLoader implements ApplicationRunner {
         Journalist Blair = new Journalist("Blair", "Wardolf", "Food");
         journalistRepository.save(Blair);
 
-        Article article1 = new Article("10 min workout", date, "Fitness", Jenny);
+        Article article1 = new Article("10 min workout", date, "Fitness", "INPUT TEXT HERE", Jenny);
         articleRepository.save(article1);
 
-        Article article2 = new Article("10 mins to make prep meals", date, "Food", Blair);
+        Article article2 = new Article("10 mins to make prep meals", date, "Food", "INPUT TEXT HERE",Blair);
         articleRepository.save(article2);
     }
 }

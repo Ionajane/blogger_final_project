@@ -47,7 +47,7 @@ public class GossipGirlApplicationTests {
 
 		Journalist Jenny = new Journalist("Jenny", "Humphrey", "Fashion");
 		journalistRepository.save(Jenny);
-		Article article1 = new Article("10 min workout", date, "Fitness", Jenny);
+		Article article1 = new Article("10 min workout", date, "Fitness", "INPUT TEXT HERE", Jenny);
 		articleRepository.save(article1);
 
 	}

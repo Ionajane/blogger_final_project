@@ -22,16 +22,20 @@ public class Article {
     @Column(name="category")
     private String category;
 
+    @Column(name="body")
+    private String body;
+
     @ManyToOne
     @JoinColumn(name = "journalist_id", nullable = false)
     private Journalist journalist;
 
 
     //constructor
-    public Article(String title, Date date, String category, Journalist journalist) {
+    public Article(String title, Date date, String category, String body, Journalist journalist) {
         this.title = title;
         this.date = date;
         this.category = category;
+        this.body = body;
         this.journalist = journalist;
     }
 
@@ -80,5 +84,11 @@ public class Article {
         this.category = category;
     }
 
+    public String getBody() {
+        return body;
+    }
 
+    public void setBody(String body) {
+        this.body = body;
+    }
 }
