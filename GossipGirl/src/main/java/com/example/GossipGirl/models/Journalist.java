@@ -1,5 +1,10 @@
 package com.example.GossipGirl.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -20,12 +25,18 @@ public class Journalist {
     @Column(name= "field")
     private String field;
 
+    @JsonIgnore
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy= "journalist", fetch = FetchType.LAZY)
+    private List<Article> articles;
+
 
     //constructor
     public Journalist(String fName, String lName, String field) {
         this.fName = fName;
         this.lName = lName;
         this.field = field;
+        this.articles = new ArrayList<>();
     }
 
     //empty constructor
@@ -65,4 +76,11 @@ public class Journalist {
         this.field = field;
     }
 
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
 }

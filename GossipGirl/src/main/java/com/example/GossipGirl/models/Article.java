@@ -1,9 +1,8 @@
 package com.example.GossipGirl.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+
 
 @Entity
 @Table(name= "articles")
@@ -27,21 +26,6 @@ public class Article {
     @JoinColumn(name = "journalist_id", nullable = false)
     private Journalist journalist;
 
-    @ManyToMany
-    @JoinTable(name = "blogPost_articles", joinColumns = {
-            @JoinColumn(
-                    name = "article_id",
-                    nullable = false,
-                    updatable = false
-            )
-    },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "blogPost_id",
-                            nullable = false,
-                            updatable = false
-                    )
-            })
-    private List<BlogPost> blogPosts;
 
     //constructor
     public Article(String title, Date date, String category, Journalist journalist) {
@@ -49,7 +33,6 @@ public class Article {
         this.date = date;
         this.category = category;
         this.journalist = journalist;
-        this.blogPosts = new ArrayList<BlogPost>();
     }
 
     //empty constructor
@@ -97,11 +80,5 @@ public class Article {
         this.category = category;
     }
 
-    public List<BlogPost> getBlogPosts() {
-        return blogPosts;
-    }
 
-    public void setBlogPosts(List<BlogPost> blogPosts) {
-        this.blogPosts = blogPosts;
-    }
 }
