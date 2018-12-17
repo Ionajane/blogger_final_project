@@ -1,10 +1,6 @@
 package com.example.GossipGirl.models;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
 @Table(name= "journalists")
@@ -21,20 +17,15 @@ public class Journalist {
     @Column(name= "last_name")
     private String lName;
 
-    @Column(name= "category")
-    private String category;
+    @Column(name= "field")
+    private String field;
 
-    //@OneToMany ( ONE journalist to many articles)
-    @JsonIgnore
-    @OneToMany(mappedBy = "article", fetch = FetchType.LAZY)
-    private List<Article> article;
 
     //constructor
-    public Journalist(String fName, String lName, String category) {
+    public Journalist(String fName, String lName, String field) {
         this.fName = fName;
         this.lName = lName;
-        this.category = category;
-        this.article = new ArrayList<>();
+        this.field = field;
     }
 
     //empty constructor
@@ -42,8 +33,6 @@ public class Journalist {
     }
 
     //getters and setters
-
-
     public Long getId() {
         return id;
     }
@@ -68,19 +57,12 @@ public class Journalist {
         this.lName = lName;
     }
 
-    public String getCategory() {
-        return category;
+    public String getField() {
+        return field;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setField(String field) {
+        this.field = field;
     }
 
-    public List<Article> getArticle() {
-        return article;
-    }
-
-    public void setArticle(List<Article> article) {
-        this.article = article;
-    }
 }
