@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-//import NavBar and all Containers
+import NavBar from './NavBar.js';
 import ArticleListContainer from './containers/article/ArticleListContainer.js';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Router >
       <React.Fragment>
-      //NAV BAR
+      <NavBar />
       <Switch>
       <Route exact path = '/articles' component={ArticleListContainer}/>
       </Switch>

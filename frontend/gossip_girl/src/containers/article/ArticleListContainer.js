@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ArticleList from '../../components/articles/ArticleList.js';
+import ArticleList from '../../components/article/ArticleList.js';
 import Request from '../../helpers/Request.js';
 
 class ArticleListContainer extends Component {
