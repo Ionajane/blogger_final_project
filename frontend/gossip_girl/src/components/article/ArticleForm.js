@@ -27,11 +27,11 @@ const ArticleForm = (props) => {
   return (
     <div className="add-article">
       <form onSubmit={handleSubmit}>
-        <label>Title <input type="text" placeholder="Title" name="title"/></label>
-        <input type="Date" placeholder="Date" name="date"/>
-        <input type="text" placeholder="Category" name="category"/>
-        <input type="textarea" placeholder="Body" name="body"/>
-      
+        <label>TITLE <input type="text" name="title"/></label>
+        <label>CATEGORY <input type="text" name="category"/></label>
+        <label>DATE <input type="Date" placeholder="Date" name="date"/></label>
+        <input type="textarea" placeholder="Insert body of post" name="body"/>
+
         <button type="submit">Save</button>
       </form>
 

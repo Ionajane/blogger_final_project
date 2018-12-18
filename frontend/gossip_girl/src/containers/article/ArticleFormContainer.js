@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Request from '../../helpers/Request.js';
 import ArticleForm from '../../components/article/ArticleForm.js';
-
+import './ArticleFormContainer.css';
 class ArticleFormContainer extends Component {
   constructor(props){
     super(props);

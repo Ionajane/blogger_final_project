@@ -18,6 +18,7 @@ const JournalistForm = (props) => {
   return (
     <div className="add-journalist">
       <form onSubmit={handleSubmit}>
+      <h1> ADD A NEW BLOGGER </h1>
       <input type="text" placeholder="first name" name="fName"/>
       <input type="text" placeholder="last name" name="lName"/>
       <input type="text" placeholder="field" name="field"/>

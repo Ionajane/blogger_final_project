@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Request from '../../helpers/Request.js';
 import JournalistForm from '../../components/journalist/JournalistForm.js';
+import './JournalistFormContainer.css';
 
 class JournalistFormContainer extends Component {
   constructor(props) {

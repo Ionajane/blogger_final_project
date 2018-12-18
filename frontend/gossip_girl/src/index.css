@@ -4,19 +4,3 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-
-.div {
-  padding: 40px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.add-article {
-  display: grid;
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 35% 35% 35%;
-  margin: 10px;
-  justify-content: center;
-}
