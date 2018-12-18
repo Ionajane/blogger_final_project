@@ -6,6 +6,7 @@ class ArticleListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {articles: []}
+    console.log("ArticleListContainer", props);
   }
 
   componentDidMount() {
