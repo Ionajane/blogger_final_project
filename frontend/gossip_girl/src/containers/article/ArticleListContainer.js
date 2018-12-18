@@ -6,12 +6,11 @@ class ArticleListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {articles: []}
-    console.log("ArticleListContainer", props);
   }
 
   componentDidMount() {
     let request = new Request()
-    request.get('/api/articles').then((data) => {
+    request.get('/articles/').then((data) => {
       this.setState({articles: data._embedded.articles})
     })
   }

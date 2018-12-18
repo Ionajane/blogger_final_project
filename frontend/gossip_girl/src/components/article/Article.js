@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 
 const Article = (props) => {
 
-//if statement?
-
   return (
     <React.Fragment>
     <Link to = {"/articles/" + props.article.id}>
@@ -13,7 +11,7 @@ const Article = (props) => {
     <p>{props.article.body}</p>
     <p>{props.article.date}</p>
 
-    <h1>article page</h1>
+    <h6>Woohoo your article is appearing!</h6>
     </React.Fragment>
   )
 }

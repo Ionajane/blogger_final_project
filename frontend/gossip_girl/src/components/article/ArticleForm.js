@@ -17,11 +17,12 @@ const ArticleForm = (props) => {
       })
     }
     props.handleArticlePost(article)
+
   }
 
-  const journalistOption = props.journalist.map((journalist, index) => {
-    return <option key={index} value{journalist._links.self.href}>{journalist.location}</option>
-  })
+  // const journalistOptions = props.journalist.map((journalist, index) => {
+  //   return <option key={index} value{journalist._links.self.href}>{journalist.location}</option>
+  // })
 
   return (
     <div>
@@ -30,9 +31,7 @@ const ArticleForm = (props) => {
         <input type="Date" placeholder="Date" name="date"/>
         <input type="text" placeholder="Category" name="category"/>
         <input type="text" placeholder="Body" name="body"/>
-        <select name="journalist">
-        {journalistOption}
-        </select>
+      
       </form>
     </div>
   )
