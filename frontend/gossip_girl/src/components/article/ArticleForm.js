@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ArticleForm = (props) => {
 
   function handleSubmit(event){
@@ -10,29 +11,30 @@ const ArticleForm = (props) => {
       "date": event.target.date.value,
       "category": event.target.category.value,
       "body": event.target.body.value,
-      "journalist": [...event.target.journalist.options].filter((option) => {
-        return option.selected
-      }).map((option) => {
-        return option.value
-      })
+      "journalist": event.target.journalist.value
     }
     props.handleArticlePost(article)
 
   }
 
-  // const journalistOptions = props.journalist.map((journalist, index) => {
-  //   return <option key={index} value{journalist._links.self.href}>{journalist.location}</option>
+  // const journalistOptions = props.journalists.map( (journalist, index) => {
+  //   return
+  //   <option key={index} value{journalist._links.self.href}>
+  //   {journalist.fName}{journalist.lName}
+  //   </option>
   // })
 
   return (
-    <div>
+    <div className="add-article">
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Title" name="title"/>
+        <label>Title <input type="text" placeholder="Title" name="title"/></label>
         <input type="Date" placeholder="Date" name="date"/>
         <input type="text" placeholder="Category" name="category"/>
-        <input type="text" placeholder="Body" name="body"/>
+        <input type="textarea" placeholder="Body" name="body"/>
       
+        <button type="submit">Save</button>
       </form>
+
     </div>
   )
 

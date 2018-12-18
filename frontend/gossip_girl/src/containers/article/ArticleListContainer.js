@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ArticleList from '../../components/article/ArticleList.js';
 import Request from '../../helpers/Request.js';
+import './ArticleListContainer.css';
 
 class ArticleListContainer extends Component {
   constructor(props) {

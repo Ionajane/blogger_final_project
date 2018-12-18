@@ -1,0 +1,15 @@
+.journalist-component-item {
+  padding: 40px;
+  margin: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.journalist-component-item {
+  display: grid;
+  grid-template-columns: 50%;
+  margin: 10px;
+  justify-content: left;
+}
