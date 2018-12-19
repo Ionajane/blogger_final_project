@@ -9,12 +9,13 @@ class JournalistFormContainer extends Component {
       this.state = {
         journalists: []
       }
-
       this.handleJournalistPost = this.handleJournalistPost.bind(this);
   }
 
   componentDidMount(){
     console.log("JFormContainer: Did Mount");
+    console.log("Journalist Form State", this.state);
+    console.log("Journalist Form Props", this.props);
     const request = new Request();
     request.get("/journalists").then( (data) => {
       this.setState({journalists: data._embedded.journalists})

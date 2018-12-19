@@ -13,6 +13,7 @@ class App extends Component {
       <Router >
       <React.Fragment>
       <NavBar />
+
       <Switch>
       <Route exact path = '/' component={ArticleListContainer}/>
       <Route exact path = '/articles/new' component={ArticleFormContainer}/>

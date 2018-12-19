@@ -6,8 +6,8 @@ const JournalistForm = (props) => {
     event.preventDefault();
 
     const journalist = {
-      "fName": event.target.fName.value,
-      "lName": event.target.lName.value,
+      "first_name": event.target.first_name.value,
+      "last_name": event.target.last_name.value,
       "field": event.target.field.value
     }
 
@@ -19,8 +19,8 @@ const JournalistForm = (props) => {
     <div className="add-journalist">
       <form onSubmit={handleSubmit}>
       <h1> ADD A NEW BLOGGER </h1>
-      <input type="text" placeholder="first name" name="fName"/>
-      <input type="text" placeholder="last name" name="lName"/>
+      <input type="text" placeholder="first name" name="first_name"/>
+      <input type="text" placeholder="last name" name="last_name"/>
       <input type="text" placeholder="field" name="field"/>
       <button type="submit">Save</button>
       </form>

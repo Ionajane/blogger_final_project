@@ -9,8 +9,6 @@ const Journalist = (props) => {
       {props.journalist.fName} {props.journalist.lName}
     </Link>
     <p>{props.journalist.field}</p>
-
-    <h6>Woohoo your journalist is appearing!</h6>
     </React.Fragment>
   )
 }

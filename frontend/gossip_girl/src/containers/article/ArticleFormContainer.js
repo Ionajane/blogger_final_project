@@ -36,7 +36,7 @@ class ArticleFormContainer extends Component {
     return (
       <ArticleForm
         articles={this.state.articles}
-        journalists={this.state.journlists}
+        journalists={this.state.journalists}
         handleArticlePost={this.handleArticlePost}
       />
     )
