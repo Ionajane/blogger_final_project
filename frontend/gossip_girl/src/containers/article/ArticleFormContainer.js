@@ -8,26 +8,29 @@ class ArticleFormContainer extends Component {
     this.state = {
       articles: [],
       journalist: []
-    }
+    };
 
     this.handleArticlePost = this.handleArticlePost.bind(this);
   }
 
   componentDidMount(){
-    console.log("Component did Mount");
+    console.log("ArticleForm Container: Component did Mount");
     const request = new Request();
-    request.get("/journalists").then((data) => {
-      this.setState({journalists: data._embedded.journalists})
-    })
-
-    request.get("/articles").then((data) => {
+    request.get("/articles").then( (data) => {
       this.setState({articles: data._embedded.articles})
     })
+
+    request.get("/journalists").then((data) => {
+      this.setState({journalist: data._embedded.journalists})
+    })
+
+
   }
 
   handleArticlePost(article, journalistId){
     const request = new Request();
-    request.post('/', article).then( () => {
+
+    request.post('/articles', article).then( () => {
       window.location = '/'
     })
   }
@@ -36,7 +39,7 @@ class ArticleFormContainer extends Component {
     return (
       <ArticleForm
         articles={this.state.articles}
-        journalists={this.state.journalists}
+        journalists={this.state.journalist}
         handleArticlePost={this.handleArticlePost}
       />
     )

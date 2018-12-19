@@ -14,8 +14,6 @@ class JournalistFormContainer extends Component {
 
   componentDidMount(){
     console.log("JFormContainer: Did Mount");
-    console.log("Journalist Form State", this.state);
-    console.log("Journalist Form Props", this.props);
     const request = new Request();
     request.get("/journalists").then( (data) => {
       this.setState({journalists: data._embedded.journalists})
@@ -24,7 +22,7 @@ class JournalistFormContainer extends Component {
 
   handleJournalistPost(journalist){
     const request = new Request();
-    request.get("/journalists").then( () => {
+    request.post("http://localhost:8080/journalists", journalist).then( () => {
       window.location = '/journalists'
     })
   }
@@ -38,5 +36,6 @@ class JournalistFormContainer extends Component {
     )
   }
 }
+
 
 export default JournalistFormContainer;

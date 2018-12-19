@@ -5,11 +5,11 @@ const JournalistList = (props) => {
   console.log("JournalistList L5  props:", props);
   const journalists = props.journalists.map((journalist) => {
     return (
-      <li key={journalist.id} className="journalist-component-item">
-        <div className= "journalist-component">
+      <ul key={journalist.id} className="journalist-component-item">
+        <li className= "journalist-component">
           <Journalist article={journalist.article} journalist={journalist} />
-        </div>
-      </li>
+        </li>
+      </ul>
     )
   })
 

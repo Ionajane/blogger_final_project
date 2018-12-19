@@ -3,6 +3,10 @@ import {Link} from 'react-router-dom';
 
 const Article = (props) => {
 
+  if(!props.article && !props.journalist){
+    return null;
+  }
+
   return (
     <React.Fragment>
     <Link to = {"/articles/" + props.article.id}>
@@ -10,8 +14,6 @@ const Article = (props) => {
     </Link>
     <p>{props.article.body}</p>
     <p>{props.article.date}</p>
-
-    <h6>Woohoo your article is appearing!</h6>
     </React.Fragment>
   )
 }

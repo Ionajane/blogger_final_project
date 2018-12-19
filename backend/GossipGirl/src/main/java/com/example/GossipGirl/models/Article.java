@@ -22,7 +22,7 @@ public class Article {
     @Column(name="category")
     private String category;
 
-    @Column(name="body")
+    @Column(name="body", length = 5000)
     private String body;
 
     @ManyToOne
